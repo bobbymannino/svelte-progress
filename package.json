@@ -1,0 +1,22 @@
+{
+  "name": "@bobbymannino/svelte-progress",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "@sveltejs/package": "next",
+    "svelte": "^3.53.1",
+    "svelte-check": "^2.10.1",
+    "svelte-preprocess": "^4.10.7",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.3",
+    "vite": "^3.2.5"
+  },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./Progress.svelte": "./Progress.svelte",
+    ".": "./index.js"
+  },
+  "svelte": "./index.js"
+}
