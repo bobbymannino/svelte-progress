@@ -1,6 +1,6 @@
 {
   "name": "@bobbymannino/svelte-progress",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
@@ -15,8 +15,10 @@
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
-    "./Progress.svelte": "./Progress.svelte",
-    ".": "./index.js"
+    "./Bar.svelte": "./Bar.svelte",
+    "./Spinner.svelte": "./Spinner.svelte",
+    ".": "./index.js",
+    "./types": "./types.js"
   },
   "svelte": "./index.js"
 }

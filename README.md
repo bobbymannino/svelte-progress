@@ -1,6 +1,6 @@
 # **Svelte Progress**
 
-Add a progress bar to your SvelteKit project to let the user know something is happening between pages loading
+Add a progress or spinner to your SvelteKit project to let the user know something is happening between different pages loading
 
 ## **Installation**
 
@@ -10,21 +10,29 @@ npm install --save-dev @bobbymannino/svelte-progress
 
 ## **Usage**
 
-layout.svelte
+> layout.svelte
 
 ```html
 <script lang="ts">
-	import { Progress } from "@bobbymannino/svelte-progress";
+    import { Bar, Spinner } from "@bobbymannino/svelte-progress";
 </script>
 
-<Progress />
+<Bar />
+<Spinner />
 ```
 
 ## **Configuration**
 
 ```html
-<Progress backgroundColor="red" />
+<Bar color="#ffef1f" size="small" />
 ```
+
+All options can be applied to both the spinner and the bar loader with the same syntax
+
+| Property Name | Property Type                         | Property Default |
+| :------------ | :------------------------------------ | :--------------- |
+| size          | 'small' \|\| 'base' \|\| 'big'        | 'base'           |
+| color         | Any css color represented as a string | '#1f5af4'        |
 
 ## **Bugs & Features**
 

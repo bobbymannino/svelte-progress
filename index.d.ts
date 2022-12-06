@@ -1,1 +1,2 @@
-export { default as Progress } from "./Progress.svelte";
+export { default as Bar } from "./Bar.svelte";
+export { default as Spinner } from "./Spinner.svelte";
