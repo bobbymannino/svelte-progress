@@ -4,7 +4,7 @@ Add a progress bar to your SvelteKit project to let the user know something is h
 
 ## **Installation**
 
-```js
+```
 npm install --save-dev @bobbymannino/svelte-progress
 ```
 
@@ -17,15 +17,15 @@ layout.svelte
 	import { Progress } from "@bobbymannino/svelte-progress";
 </script>
 
-<progress />
+<Progress />
 ```
 
 ## **Configuration**
 
 ```html
-<progress backgroundColor="red" />
+<Progress backgroundColor="red" />
 ```
 
-## **Bugs**
+## **Bugs & Features**
 
-Submit all bugs to the [issues panel](https://github.com/bobbymannino/svelte-progress/issues) panel on GitHub
+Submit all bugs and/or feature requests to the [issues panel](https://github.com/bobbymannino/svelte-progress/issues) panel on GitHub
