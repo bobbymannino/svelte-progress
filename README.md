@@ -14,7 +14,7 @@ npm install --save-dev @bobbymannino/svelte-progress
 
 ```html
 <script lang="ts">
-    import { Bar, Spinner } from "@bobbymannino/svelte-progress";
+	import { Bar, Spinner } from "@bobbymannino/svelte-progress";
 </script>
 
 <Bar />
@@ -33,6 +33,12 @@ All options can be applied to both the spinner and the bar loader with the same 
 | :------------ | :------------------------------------ | :--------------- |
 | size          | 'small' \|\| 'base' \|\| 'big'        | 'base'           |
 | color         | Any css color represented as a string | '#1f5af4'        |
+
+To change the background color with TailwindCSS you can use:
+
+```html
+<Bar class="bg-red-600" />
+```
 
 ## **Bugs & Features**
 

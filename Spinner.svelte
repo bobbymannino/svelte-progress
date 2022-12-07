@@ -5,97 +5,97 @@ export let size = "base";
 </script>
 
 {#if $navigating}
-    <div style:--color={color} data-size={size} transition:fade>
-        {#each Array(8) as _}<span />{/each}
-    </div>
+	<div style:--color={color} data-size={size} transition:fade {...$$restProps}>
+		{#each Array(8) as _}<span />{/each}
+	</div>
 {/if}
 
 <style>
-    div {
-        position: fixed;
-        z-index: 9999;
-        top: 1rem;
-        right: 1rem;
-        pointer-events: none;
-        user-select: none;
-        width: var(--wrapper-size);
-        height: var(--wrapper-size);
-        display: grid;
-        place-items: center;
-    }
+	div {
+		position: fixed;
+		z-index: 9999;
+		top: 1rem;
+		right: 1rem;
+		pointer-events: none;
+		user-select: none;
+		width: var(--wrapper-size);
+		height: var(--wrapper-size);
+		display: grid;
+		place-items: center;
+	}
 
-    div[data-size="small"] {
-        --dot-size: 0.4rem;
-        --wrapper-size: 1.8rem;
-    }
+	div[data-size="small"] {
+		--dot-size: 0.4rem;
+		--wrapper-size: 1.8rem;
+	}
 
-    div[data-size="base"] {
-        --dot-size: 0.6rem;
-        --wrapper-size: 2.8rem;
-    }
+	div[data-size="base"] {
+		--dot-size: 0.6rem;
+		--wrapper-size: 2.8rem;
+	}
 
-    div[data-size="big"] {
-        --dot-size: 0.8rem;
-        --wrapper-size: 3.8rem;
-    }
+	div[data-size="big"] {
+		--dot-size: 0.8rem;
+		--wrapper-size: 3.8rem;
+	}
 
-    span {
-        display: block;
-        width: var(--dot-size);
-        height: var(--dot-size);
-        position: absolute;
-        background-color: var(--color);
-        box-shadow: 0 0.25rem 0.25rem hsl(0 0% 0% / 0.25);
-        border-radius: 100vmax;
-        animation: pulse 800ms ease infinite;
-    }
+	span {
+		display: block;
+		width: var(--dot-size);
+		height: var(--dot-size);
+		position: absolute;
+		background-color: var(--color);
+		box-shadow: 0 0.25rem 0.25rem hsl(0 0% 0% / 0.25);
+		border-radius: 100vmax;
+		animation: pulse 800ms ease infinite;
+	}
 
-    @keyframes pulse {
-        50% {
-            opacity: 0;
-        }
-    }
+	@keyframes pulse {
+		50% {
+			opacity: 0;
+		}
+	}
 
-    span:nth-child(1) {
-        top: 0;
-    }
+	span:nth-child(1) {
+		top: 0;
+	}
 
-    span:nth-child(2) {
-        top: 12.5%;
-        right: 12.5%;
-        animation-delay: 100ms;
-    }
+	span:nth-child(2) {
+		top: 12.5%;
+		right: 12.5%;
+		animation-delay: 100ms;
+	}
 
-    span:nth-child(3) {
-        right: 0;
-        animation-delay: 200ms;
-    }
+	span:nth-child(3) {
+		right: 0;
+		animation-delay: 200ms;
+	}
 
-    span:nth-child(4) {
-        bottom: 12.5%;
-        right: 12.5%;
-        animation-delay: 300ms;
-    }
+	span:nth-child(4) {
+		bottom: 12.5%;
+		right: 12.5%;
+		animation-delay: 300ms;
+	}
 
-    span:nth-child(5) {
-        bottom: 0;
-        animation-delay: 400ms;
-    }
+	span:nth-child(5) {
+		bottom: 0;
+		animation-delay: 400ms;
+	}
 
-    span:nth-child(6) {
-        bottom: 12.5%;
-        left: 12.5%;
-        animation-delay: 500ms;
-    }
+	span:nth-child(6) {
+		bottom: 12.5%;
+		left: 12.5%;
+		animation-delay: 500ms;
+	}
 
-    span:nth-child(7) {
-        left: 0;
-        animation-delay: 600ms;
-    }
+	span:nth-child(7) {
+		left: 0;
+		animation-delay: 600ms;
+	}
 
-    span:nth-child(8) {
-        top: 12.5%;
-        left: 12.5%;
-        animation-delay: 700ms;
-    }
+	span:nth-child(8) {
+		top: 12.5%;
+		left: 12.5%;
+		animation-delay: 700ms;
+	}
 </style>

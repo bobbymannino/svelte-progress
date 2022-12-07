@@ -2,6 +2,7 @@ import { SvelteComponentTyped } from "svelte";
 import type { SizePropType } from "./types";
 declare const __propDef: {
     props: {
+        [x: string]: any;
         color?: string | undefined;
         size?: SizePropType | undefined;
     };

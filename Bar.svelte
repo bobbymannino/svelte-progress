@@ -33,53 +33,47 @@ $: $navigating ? startProgress() : finishProgress();
 </script>
 
 {#if !done && started}
-    <div
-        out:fade
-        style:--color={color}
-        data-size={size}
-        style:--percent="{percent}%"
-        class:started
-    />
+	<div out:fade style:--color={color} data-size={size} style:--percent="{percent}%" class:started {...$$restProps} />
 {/if}
 
 <style>
-    div {
-        position: fixed;
-        z-index: 9999;
-        left: 0;
-        top: 0;
-        right: 0;
-        background-color: var(--color);
-        box-shadow: 0 0.25rem 0.25rem hsl(0 0% 0% / 0.25);
-        pointer-events: none;
-        user-select: none;
-        transform-origin: left;
-        transform: scale(var(--percent), 100%, 100%);
-    }
+	div {
+		position: fixed;
+		z-index: 9999;
+		left: 0;
+		top: 0;
+		right: 0;
+		background-color: var(--color);
+		box-shadow: 0 0.25rem 0.25rem hsl(0 0% 0% / 0.25);
+		pointer-events: none;
+		user-select: none;
+		transform-origin: left;
+		transform: scale(var(--percent), 100%, 100%);
+	}
 
-    div[data-size="small"] {
-        height: 0.1rem;
-    }
+	div[data-size="small"] {
+		height: 0.1rem;
+	}
 
-    div[data-size="base"] {
-        height: 0.2rem;
-    }
+	div[data-size="base"] {
+		height: 0.2rem;
+	}
 
-    div[data-size="big"] {
-        height: 0.3rem;
-    }
+	div[data-size="big"] {
+		height: 0.3rem;
+	}
 
-    div.started {
-        transition: transform 150ms ease;
-    }
+	div.started {
+		transition: transform 150ms ease;
+	}
 
-    @supports (scale: 50% 100% 100%) {
-        div {
-            scale: var(--percent) 100% 100%;
-        }
+	@supports (scale: 50% 100% 100%) {
+		div {
+			scale: var(--percent) 100% 100%;
+		}
 
-        div.started {
-            transition: scale 150ms ease;
-        }
-    }
+		div.started {
+			transition: scale 150ms ease;
+		}
+	}
 </style>
