@@ -29,16 +29,10 @@ npm install --save-dev @bobbymannino/svelte-progress
 
 All options can be applied to both the spinner and the bar loader with the same syntax
 
-| Property Name | Property Type                         | Property Default |
-| :------------ | :------------------------------------ | :--------------- |
-| size          | 'small' \|\| 'base' \|\| 'big'        | 'base'           |
-| color         | Any css color represented as a string | '#1f5af4'        |
-
-To change the background color with TailwindCSS you can use:
-
-```html
-<Bar class="bg-red-600" />
-```
+| Property Name | Property Type                                                                                              | Property Default |
+| :------------ | :--------------------------------------------------------------------------------------------------------- | :--------------- |
+| size          | 'small' \|\| 'base' \|\| 'big'                                                                             | 'base'           |
+| color         | Any css color represented as a string or if your using TailwindCSS the color and the shade e.g 'amber-200' | '#1f5af4'        |
 
 ## **Bugs & Features**
 

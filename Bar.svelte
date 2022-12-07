@@ -1,27 +1,27 @@
 <script>import { navigating } from "$app/stores";
+import { onMount } from "svelte";
 import { fade } from "svelte/transition";
+import { checkTailwindColor } from "./checkTailwindColor";
 export let color = "#1f5af4";
 export let size = "base";
+onMount(() => (color = checkTailwindColor(color)));
 let percent = 0;
 let done = false;
 let started = false;
-let trickleTimer;
+let trickleInterval;
 const trickle = () => {
     percent += Math.random() * 5;
-    if (percent > 80)
-        return;
-    trickleTimer = setTimeout(trickle, 150);
+    percent > 80 && (clearInterval(trickleInterval), (trickleInterval = undefined));
 };
 function startProgress() {
     done = false;
     started = true;
     // Only start timer if not already going
-    if (trickleTimer == null)
-        trickleTimer = setTimeout(trickle, 150);
+    !trickleInterval && (trickleInterval = setInterval(trickle, 150));
 }
 function finishProgress() {
-    // If timer is already going remove and start new one
-    trickleTimer && (clearTimeout(trickleTimer), (trickleTimer = null));
+    // If timer is already going remove
+    trickleInterval && (clearInterval(trickleInterval), (trickleInterval = undefined));
     percent = 100;
     setTimeout(() => {
         done = true;
@@ -33,7 +33,7 @@ $: $navigating ? startProgress() : finishProgress();
 </script>
 
 {#if !done && started}
-	<div out:fade style:--color={color} data-size={size} style:--percent="{percent}%" class:started {...$$restProps} />
+	<div out:fade style="--color: {color}; --percent: {percent}%;" data-size={size} class:started />
 {/if}
 
 <style>
@@ -43,10 +43,12 @@ $: $navigating ? startProgress() : finishProgress();
 		left: 0;
 		top: 0;
 		right: 0;
-		background-color: var(--color);
+		background-color: var(--tw-color, var(--color));
 		box-shadow: 0 0.25rem 0.25rem hsl(0 0% 0% / 0.25);
 		pointer-events: none;
-		user-select: none;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+		        user-select: none;
 		transform-origin: left;
 		transform: scale(var(--percent), 100%, 100%);
 	}
@@ -75,5 +77,4 @@ $: $navigating ? startProgress() : finishProgress();
 		div.started {
 			transition: scale 150ms ease;
 		}
-	}
-</style>
+	}</style>

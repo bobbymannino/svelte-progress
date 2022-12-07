@@ -1,11 +1,14 @@
 <script>import { navigating } from "$app/stores";
 import { fade } from "svelte/transition";
+import { onMount } from "svelte";
+import { checkTailwindColor } from "./checkTailwindColor";
 export let color = "#1f5af4";
 export let size = "base";
+onMount(() => (color = checkTailwindColor(color)));
 </script>
 
 {#if $navigating}
-	<div style:--color={color} data-size={size} transition:fade {...$$restProps}>
+	<div style="--color: {color};" data-size={size} transition:fade>
 		{#each Array(8) as _}<span />{/each}
 	</div>
 {/if}
@@ -17,7 +20,9 @@ export let size = "base";
 		top: 1rem;
 		right: 1rem;
 		pointer-events: none;
-		user-select: none;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+		        user-select: none;
 		width: var(--wrapper-size);
 		height: var(--wrapper-size);
 		display: grid;
@@ -97,5 +102,4 @@ export let size = "base";
 		top: 12.5%;
 		left: 12.5%;
 		animation-delay: 700ms;
-	}
-</style>
+	}</style>
