@@ -1,12 +1,29 @@
 # **Svelte Progress**
 
-Add a progress or spinner to your SvelteKit project to let the user know something is happening between different pages loading
+## **Description**
+
+A set of Svelte specific loading elements for navigating pages that are:
+
+-   **TypeScript First**
+-   **Customizable With Props**
+-   **Zero-Config**
+-   **TailwindCSS Compatible**
+
+---
+
+## **Demo**
+
+[Demo Site](https://svelte-progress.vercel.app)
+
+---
 
 ## **Installation**
 
 ```
 npm install --save-dev @bobbymannino/svelte-progress
 ```
+
+---
 
 ## **Usage**
 
@@ -21,6 +38,8 @@ npm install --save-dev @bobbymannino/svelte-progress
 <Spinner />
 ```
 
+---
+
 ## **Configuration**
 
 ```html
@@ -33,6 +52,8 @@ All options can be applied to both the spinner and the bar loader with the same 
 | :------------ | :--------------------------------------------------------------------------------------------------------- | :--------------- |
 | size          | 'small' \|\| 'base' \|\| 'big'                                                                             | 'base'           |
 | color         | Any css color represented as a string or if your using TailwindCSS the color and the shade e.g 'amber-200' | '#1f5af4'        |
+
+---
 
 ## **Bugs & Features**
 
