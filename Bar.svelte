@@ -1,16 +1,18 @@
 <script>import { navigating } from "$app/stores";
-import { onMount } from "svelte";
 import { fade } from "svelte/transition";
 import { checkTailwindColor } from "./checkTailwindColor";
 export let color = "#1f5af4";
 export let size = "base";
-onMount(() => (color = checkTailwindColor(color)));
+export let shadow = "show";
+export let speed = "base";
+color = checkTailwindColor(color);
 let percent = 0;
 let done = false;
 let started = false;
 let trickleInterval;
+const rate = [2, 5, 10];
 const trickle = () => {
-    percent += Math.random() * 5;
+    percent += Math.random() * rate[speed === "slow" ? 0 : speed === "base" ? 1 : 2];
     percent > 80 && (clearInterval(trickleInterval), (trickleInterval = undefined));
 };
 function startProgress() {
@@ -33,7 +35,7 @@ $: $navigating ? startProgress() : finishProgress();
 </script>
 
 {#if !done && started}
-	<div out:fade style="--color: {color}; --percent: {percent}%;" data-size={size} class:started />
+	<div out:fade style="--color: {color}; --percent: {percent}%;" data-size={size} class:started data-shadow={shadow} />
 {/if}
 
 <style>
@@ -44,13 +46,17 @@ $: $navigating ? startProgress() : finishProgress();
 		top: 0;
 		right: 0;
 		background-color: var(--tw-color, var(--color));
-		box-shadow: 0 0.25rem 0.25rem hsl(0 0% 0% / 0.25);
 		pointer-events: none;
-		-webkit-user-select: none;
-		   -moz-user-select: none;
-		        user-select: none;
+		user-select: none;
 		transform-origin: left;
+		-webkit-transform: scale(var(--percent), 100%, 100%);
+		-moz-transform: scale(var(--percent), 100%, 100%);
+		-o-transform: scale(var(--percent), 100%, 100%);
 		transform: scale(var(--percent), 100%, 100%);
+	}
+
+	div[data-shadow="show"] {
+		box-shadow: 0 0.25rem 0.25rem hsl(0 0% 0% / 0.25);
 	}
 
 	div[data-size="small"] {
@@ -77,4 +83,5 @@ $: $navigating ? startProgress() : finishProgress();
 		div.started {
 			transition: scale 150ms ease;
 		}
-	}</style>
+	}
+</style>

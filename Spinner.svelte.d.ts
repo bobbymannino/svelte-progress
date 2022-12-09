@@ -1,9 +1,10 @@
 import { SvelteComponentTyped } from "svelte";
-import type { SizePropType } from "./types";
 declare const __propDef: {
     props: {
         color?: string | undefined;
-        size?: SizePropType | undefined;
+        size?: "small" | "base" | "big" | undefined;
+        shadow?: "show" | "hide" | undefined;
+        speed?: "base" | "slow" | "fast" | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;
