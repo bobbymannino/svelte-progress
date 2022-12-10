@@ -5,6 +5,8 @@ declare const __propDef: {
         size?: "small" | "base" | "big" | undefined;
         shadow?: "show" | "hide" | undefined;
         speed?: "base" | "slow" | "fast" | undefined;
+        startProgress?: (() => void) | undefined;
+        finishProgress?: (() => void) | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;
@@ -15,5 +17,7 @@ export type BarProps = typeof __propDef.props;
 export type BarEvents = typeof __propDef.events;
 export type BarSlots = typeof __propDef.slots;
 export default class Bar extends SvelteComponentTyped<BarProps, BarEvents, BarSlots> {
+    get startProgress(): () => void;
+    get finishProgress(): () => void;
 }
 export {};

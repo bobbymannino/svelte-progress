@@ -30,6 +30,7 @@ npm install --save-dev @bobbymannino/svelte-progress
 
 ```html
 <!-- layout.svelte -->
+
 <script lang="ts">
 	import { Bar, Spinner } from "@bobbymannino/svelte-progress";
 </script>
@@ -43,9 +44,10 @@ npm install --save-dev @bobbymannino/svelte-progress
 ## **Configuration**
 
 ```html
-<Bar color="#ffef1f" size="small" shadow="show" speed="fast" />
+<!-- layout.svelte -->
 
-<!-- All options can be applied to both the spinner and the bar loader with the same syntax -->
+<Bar color="#ffef1f" size="small" shadow="show" speed="fast" />
+<Spinner color="#ffef1f" size="small" shadow="show" speed="fast" />
 ```
 
 | Property Name | Property Type                         | Property Default |
@@ -54,6 +56,37 @@ npm install --save-dev @bobbymannino/svelte-progress
 | shadow        | 'hide' \|\| 'show'                    | 'show'           |
 | speed         | 'slow' \|\| 'base' \|\| 'fast'        | 'base'           |
 | color         | Any CSS color represented as a string | '#1f5af4'        |
+
+---
+
+## **Manual Usage**
+
+```html
+<!-- layout.svelte -->
+
+<script lang="ts">
+	let startBar: () => void;
+	let finishBar: () => void;
+	let startSpinner: () => void;
+	let finishSpinner: () => void;
+
+	function s() {
+		startBar();
+		startSpinner();
+	}
+
+	function f() {
+		finishBar();
+		finishSpinner();
+	}
+</script>
+
+<Bar bind:startProgress="{startBar}" bind:finishProgress="{finishBar}" />
+<Spinner bind:startProgress="{startSpinner}" bind:finishProgress="{finishSpinner}" />
+
+<button on:click="{s}">Start</button>
+<button on:click="{f}">Finish</button>
+```
 
 ---
 

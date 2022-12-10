@@ -13,13 +13,13 @@ const trickle = () => {
     percent += Math.random() * rate[speed === "slow" ? 0 : speed === "base" ? 1 : 2];
     percent > 80 && (clearInterval(trickleInterval), (trickleInterval = undefined));
 };
-function startProgress() {
+export const startProgress = () => {
     done = false;
     started = true;
     // Only start timer if not already going
     !trickleInterval && (trickleInterval = setInterval(trickle, 150));
-}
-function finishProgress() {
+};
+export const finishProgress = () => {
     // If timer is already going remove
     trickleInterval && (clearInterval(trickleInterval), (trickleInterval = undefined));
     percent = 100;
@@ -28,7 +28,7 @@ function finishProgress() {
         started = false;
         percent = 0;
     }, 150);
-}
+};
 $: $navigating ? startProgress() : finishProgress();
 </script>
 

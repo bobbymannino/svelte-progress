@@ -1,5 +1,9 @@
 # **Changelog**
 
+## **v2.3.0**
+
+-   [feat] call start and finish functions for loaders for programmable approach
+
 ## **v2.2.1**
 
 -   [down] issue [#3](https://github.com/bobbymannino/svelte-progress/issues/3) (removed TailwindCSS implementation)

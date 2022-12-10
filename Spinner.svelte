@@ -4,9 +4,17 @@ export let color = "#1f5af4";
 export let size = "base";
 export let shadow = "show";
 export let speed = "base";
+let show = false;
+export const startProgress = () => {
+    show = true;
+};
+export const finishProgress = () => {
+    show = false;
+};
+$: $navigating ? startProgress() : finishProgress();
 </script>
 
-{#if $navigating}
+{#if show}
 	<div style="--color: {color};" data-size={size} transition:fade data-shadow={shadow} data-speed={speed}>
 		{#each Array(8) as _}<span />{/each}
 	</div>

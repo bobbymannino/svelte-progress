@@ -1,6 +1,6 @@
 {
   "name": "@bobbymannino/svelte-progress",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
