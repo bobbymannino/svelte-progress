@@ -1,11 +1,9 @@
 <script>import { navigating } from "$app/stores";
 import { fade } from "svelte/transition";
-import { checkTailwindColor } from "./checkTailwindColor";
 export let color = "#1f5af4";
 export let size = "base";
 export let shadow = "show";
 export let speed = "base";
-color = checkTailwindColor(color);
 let percent = 0;
 let done = false;
 let started = false;

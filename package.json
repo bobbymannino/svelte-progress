@@ -1,6 +1,6 @@
 {
   "name": "@bobbymannino/svelte-progress",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
@@ -17,7 +17,6 @@
     "./package.json": "./package.json",
     "./Bar.svelte": "./Bar.svelte",
     "./Spinner.svelte": "./Spinner.svelte",
-    "./checkTailwindColor": "./checkTailwindColor.js",
     ".": "./index.js",
     "./types": "./types.js"
   },
