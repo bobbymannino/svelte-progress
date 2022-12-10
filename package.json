@@ -2,9 +2,9 @@
   "name": "@bobbymannino/svelte-progress",
   "version": "2.3.0",
   "devDependencies": {
-    "@sveltejs/adapter-auto": "next",
-    "@sveltejs/kit": "next",
-    "@sveltejs/package": "next",
+    "@sveltejs/adapter-auto": "1.0.0-next.90",
+    "@sveltejs/kit": "1.0.0-next.581",
+    "@sveltejs/package": "1.0.0-next.6",
     "svelte": "^3.54.0",
     "vite": "^4.0.0",
     "svelte-check": "^2.10.2",
@@ -12,9 +12,29 @@
     "tslib": "^2.4.1",
     "typescript": "^4.9.4"
   },
+  "homepage": "https://bobbymannino.vercel.app/svelte-progress",
+  "description": "A set of Svelte specific loading elements for navigating pages that are: TypeScript First, Customizable With Props & Zero-Config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobbymannino/svelte-progress"
+  },
+  "author": {
+    "email": "manninobobby@icloud.com",
+    "name": "Bobby Mannino"
+  },
   "type": "module",
+  "keywords": [
+    "progress",
+    "loader",
+    "svelte",
+    "sveltekit"
+  ],
+  "bugs": {
+    "url": "https://github.com/bobbymannino/svelte-progress/issues"
+  },
   "exports": {
     "./package.json": "./package.json",
+    "./.DS_Store": "./.DS_Store",
     "./Bar.svelte": "./Bar.svelte",
     "./Spinner.svelte": "./Spinner.svelte",
     ".": "./index.js",
