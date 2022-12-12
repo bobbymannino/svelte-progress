@@ -12,7 +12,8 @@ A set of Svelte specific loading elements for navigating pages that are:
 
 ## **Demo**
 
-https://user-images.githubusercontent.com/71903402/206724163-faf39db9-5c9d-4db3-ae9c-7aa5814933fe.mp4
+https://user-images.githubusercontent.com/71903402/207066100-fe6dbd3d-0f79-4792-8702-3d24fdcd350b.mov
+
 
 [Demo Site](https://bobbymannino.vercel.app/svelte-progress)
 
