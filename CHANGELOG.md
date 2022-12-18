@@ -6,7 +6,7 @@
 
 ## **v2.2.1**
 
--   [down] issue [#3](https://github.com/bobbymannino/svelte-progress/issues/3) (removed TailwindCSS implementation)
+-   [fix] issue [#3](https://github.com/bobbymannino/svelte-progress/issues/3) (removed TailwindCSS implementation)
 
 ## **v.2.2.0**
 
